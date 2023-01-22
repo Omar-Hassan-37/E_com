@@ -1,0 +1,34 @@
+<div class="homepage container-fluid text-center gradient p-3">
+
+    <div class="row container-fluid p-3 row justify-content-between">
+        <div class="col-11">
+            <!--<span>Instructor Name | </span>
+            <span>ID</span>-->
+        </div>
+        <button class="col-1 btn btn-outline-light" [routerLink]="['../profile/instructor']">View Profile</button>
+    </div>
+
+    <div class="row">
+        <hr>
+    </div>
+
+    <div class="row container-fluid fs-3">
+        <div class="col-4 container-fluid">
+            <a class="row my-2" [routerLink]="['/instructorCoursePage']">Courses</a>
+            <!-- <a class="row my-2" href="#">General Material</a>
+            <a class="row my-2" href="#">Messages</a>
+            <a class="row my-2" href="#">Activity Stream</a>
+            <a class="row my-2" href="#">Polls</a>
+            <a class="row my-2" href="#">Final Exams</a>
+            <a class="row my-2" href="#">Calendar</a>
+            <a class="row my-2" href="#">Top 50</a>
+            <a class="row my-2" href="#">Event Registration</a> -->
+            <a class="row my-2" [routerLink]="['/viewDepartmentCourses/student']" > View Department Courses</a>
+        </div>
+
+        <div class="col-8 container-fluid">
+          <app-general-feed [type] = "'instructor'" ></app-general-feed>
+
+        </div>
+    </div>
+</div>

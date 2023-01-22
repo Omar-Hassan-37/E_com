@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.gradient{
+  width: 90vw;
+  color: white;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom, #0B879A, #88D5E1);
+  height: 200vh;
+}

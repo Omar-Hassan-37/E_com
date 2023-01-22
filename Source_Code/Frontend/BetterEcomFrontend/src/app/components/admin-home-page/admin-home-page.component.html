@@ -1,0 +1,30 @@
+<div class="container-fluid text-center gradient p-3">
+
+    <div class="row container-fluid p-3 row justify-content-between">
+        <div class="col-11">
+            <span></span>
+        </div>
+            <button class="col-1 btn btn-outline-light" [routerLink]="['../profile/admin']">view profile</button>
+    </div>
+
+    <hr class="row">
+
+    <div class="row fs-3">
+        <div class="col-4 container-fluid p-3">
+            <a class="row my-2" [routerLink]="['/registerationsAndAccountsManagements']" >Registeration and Accounts Managements</a>
+            <a class="row my-2" [routerLink]="['/adminCoursePage']">Courses</a>
+            <!-- <a class="row my-2" href="#">General Material</a>
+            <a class="row my-2" href="#">Messages</a>
+            <a class="row my-2" href="#">Activity Stream</a>
+            <a class="row my-2" href="#">Polls</a>
+            <a class="row my-2" href="#">Final Exams</a>
+            <a class="row my-2" href="#">Calendar</a>
+            <a class="row my-2" href="#">Top 50</a>
+            <a class="row my-2" href="#">Event Registration</a> -->
+            <a class="row my-2" [routerLink]="['../adminDepartment']">Department Registration</a>
+            <a class="row my-2" [routerLink]="['/viewDepartmentCourses/admin']" > View Department Courses</a>
+        </div>
+
+        <app-general-feed class="col-8" [type] = "'admin'" style="text-align:center" >  </app-general-feed>
+    </div>
+  </div>

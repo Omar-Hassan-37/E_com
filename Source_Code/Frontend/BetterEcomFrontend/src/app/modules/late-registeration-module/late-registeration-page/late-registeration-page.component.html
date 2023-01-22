@@ -1,0 +1,52 @@
+<div class="gradient container-fluid p-3">
+    <hr class="row">
+    <button class="row col-12 btn btn-outline-primary text-light my-2" type="button" (click)="getAvailableCourses()">Get Available Courses</button>
+
+    <div class="row container-fluid my-3" [hidden]="!showAvailableCoursesTable">
+        <div class="row my-1 fw-bold text-dark">
+            <label class="col-2">Academic Year</label>
+            <label class="col-2">Course Code</label>
+            <label class="col-2">Course Description</label>
+            <label class="col-2">Course Name</label>
+            <label class="col-2">Department Code</label>
+            <!--<label class="col-1">Is Archived</label>
+            <label class="col-1">Is Read Only</label>-->
+        </div>
+
+        <div class="row my-2" *ngFor="let courses of objectValues(available_courses_list);let courseIndex = index">
+            <!--<div class="col-2 container-fluid" *ngFor="let course of courses | keyvalue"><label class="row" *ngIf="course.key !='is_archived' && course.key !='is_read_only' ">{{ course.value }}</label></div>-->
+            <div class="col-2 container-fluid" *ngFor="let course of courses | keyvalue">{{ course.value }}</div>
+            <button class="col-2 btn btn-outline-primary text-light" type="button" (click)="getAvailableCourseInstances(courseIndex)">Select</button>
+        </div>
+    </div>
+
+    <div class="row container-fluid my-3" [hidden]="!showAvailableInstancesTable">
+        <div class="row my-1 fw-bold text-dark">
+            <label class="col-2">Course Code</label>
+            <label class="col-2">Course Term</label>
+            <label class="col-2">Course Year</label>
+            <label class="col-2">Credit Hours</label>
+            <label class="col-2">Instance ID</label>
+        </div>
+
+        <div class="row my-2" *ngFor="let instances of objectValues(available_coures_instance_list);let instanceIndex = index">
+            <label class="col-2" *ngFor="let instance of instances | keyvalue">{{ instance.value }}</label>
+            <button class="col-2 btn btn-outline-primary text-light" type="button" (click)="submitRequest(instanceIndex)">Register in Course</button>
+        </div>
+    </div>
+
+    <div class="row container-fluid my-3">
+        <div class="row my-1 fw-bold text-dark">
+            <label class="col-2">Course Code</label>
+            <label class="col-2">Request Date</label>
+            <label class="col-2">Request ID</label>
+            <label class="col-2">Request Status</label>
+            <label class="col-2">Student ID</label>
+        </div>
+
+        <div class="row my-2" *ngFor="let requests of objectValues(late_requests_list);let requestIndex = index" style="color: black;">
+            <label class="col-2" *ngFor="let request of requests | keyvalue">{{ request.value }}</label>
+            <button class="col-2 btn btn-outline-primary text-light" (click)="deleteRequest(requestIndex)">Delete request</button>
+        </div>
+    </div>
+</div>
